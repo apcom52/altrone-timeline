@@ -1,0 +1,126 @@
+@import 'uvars.less';
+
+.timeline {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+
+  .timeline__section {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .timeline__section__item {
+      flex: 1;
+
+      &:first-child {
+        padding-bottom: 1rem;
+        border-bottom: 2px solid @d-gray;
+      }
+
+      &:last-child {
+        padding-top: 1rem;
+        border-top: 2px solid @d-gray;
+      }
+    }
+
+    .timeline__section__circle {
+      position: absolute;
+      margin: auto;
+      background-color: @u-gray;
+      width: 1.5rem;
+      height: 1rem;
+      align-self: center;
+      justify-self: center;
+      top: ~'calc(50% - 0.5rem - 2px)';
+      border: 2px solid @d-gray;
+      border-radius: 1rem;
+      padding: 0.5rem;
+      box-sizing: border-box;
+    }
+
+    .timeline__section__label {
+      position: absolute;
+      margin: auto;
+      background-color: @u-gray;
+      min-width: 1.8rem;
+      min-height: 1.8rem;
+      align-self: center;
+      justify-self: center;
+      top: ~'calc(50% - 0.9rem - 2px)';
+      border: 2px solid @d-gray;
+      border-radius: 1rem;
+      padding: 0.5rem;
+      box-sizing: border-box;
+      font-size: 0.8rem;
+      content: "";
+    }
+  }
+
+  &.timeline--vertical {
+    flex-direction: column;
+
+    .timeline__section {
+      flex-direction: row;
+      align-items: center;
+
+      .timeline__section__item {
+        &:first-child {
+          border-bottom: none;
+          border-right: 2px solid @d-gray;
+          padding-bottom: 0px;
+          padding-right: 2rem;
+        }
+
+        &:last-child {
+          border-top: none;
+          border-left: 2px solid @d-gray;
+          padding-top: 0px;
+          padding-left: 2rem;
+        }
+      }
+
+      .timeline__section__circle {
+        width: 1rem;
+        height: 1.5rem;
+        left: ~'calc(50% - 0.5rem - 2px)';
+      }
+
+      .timeline__section__label {
+        width: 5rem;
+        min-height: 1.5rem;
+        padding: 0.5rem 0.2rem;
+        left: ~'calc(50% - 2.5rem)';
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        text-align: center;
+      }
+    }
+  }
+
+  &.timeline--invert {
+    .timeline__section {
+      .timeline__section__item {
+        &:first-child {
+          border-color: @l-gray;
+        }
+
+        &:last-child {
+          border-color: @l-gray;
+        }
+      }
+
+      .timeline__section__circle {
+        background-color: @d-gray;
+        border-color: @l-gray;
+      }
+
+      .timeline__section__label {
+        background-color: @d-gray;
+        border-color: @l-gray;
+        color: @u-gray;
+      }
+    }
+  }
+}

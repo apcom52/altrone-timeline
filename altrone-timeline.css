@@ -1,0 +1,102 @@
+/* white */
+/* black */
+.timeline {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.timeline .timeline__section {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.timeline .timeline__section .timeline__section__item {
+  flex: 1;
+}
+.timeline .timeline__section .timeline__section__item:first-child {
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #424242;
+}
+.timeline .timeline__section .timeline__section__item:last-child {
+  padding-top: 1rem;
+  border-top: 2px solid #424242;
+}
+.timeline .timeline__section .timeline__section__circle {
+  position: absolute;
+  margin: auto;
+  background-color: #f5f5f5;
+  width: 1.5rem;
+  height: 1rem;
+  align-self: center;
+  justify-self: center;
+  top: calc(50% - 0.5rem - 2px);
+  border: 2px solid #424242;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+.timeline .timeline__section .timeline__section__label {
+  position: absolute;
+  margin: auto;
+  background-color: #f5f5f5;
+  min-width: 1.8rem;
+  min-height: 1.8rem;
+  align-self: center;
+  justify-self: center;
+  top: calc(50% - 0.9rem - 2px);
+  border: 2px solid #424242;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  font-size: 0.8rem;
+  content: "";
+}
+.timeline.timeline--vertical {
+  flex-direction: column;
+}
+.timeline.timeline--vertical .timeline__section {
+  flex-direction: row;
+  align-items: center;
+}
+.timeline.timeline--vertical .timeline__section .timeline__section__item:first-child {
+  border-bottom: none;
+  border-right: 2px solid #424242;
+  padding-bottom: 0px;
+  padding-right: 2rem;
+}
+.timeline.timeline--vertical .timeline__section .timeline__section__item:last-child {
+  border-top: none;
+  border-left: 2px solid #424242;
+  padding-top: 0px;
+  padding-left: 2rem;
+}
+.timeline.timeline--vertical .timeline__section .timeline__section__circle {
+  width: 1rem;
+  height: 1.5rem;
+  left: calc(50% - 0.5rem - 2px);
+}
+.timeline.timeline--vertical .timeline__section .timeline__section__label {
+  width: 5rem;
+  min-height: 1.5rem;
+  padding: 0.5rem 0.2rem;
+  left: calc(50% - 2.5rem);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: center;
+}
+.timeline.timeline--invert .timeline__section .timeline__section__item:first-child {
+  border-color: #E0E0E0;
+}
+.timeline.timeline--invert .timeline__section .timeline__section__item:last-child {
+  border-color: #E0E0E0;
+}
+.timeline.timeline--invert .timeline__section .timeline__section__circle {
+  background-color: #424242;
+  border-color: #E0E0E0;
+}
+.timeline.timeline--invert .timeline__section .timeline__section__label {
+  background-color: #424242;
+  border-color: #E0E0E0;
+  color: #f5f5f5;
+}
